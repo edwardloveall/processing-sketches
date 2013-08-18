@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MIDIFile PUBLIC
+  "-//Recordare//DTD MusicXML 0.9 MIDI//EN"
+  "http://www.musicxml.org/dtds/midixml.dtd">
+<MIDIFile>
+<Track Number="0">
+  <Event>
+    <Absolute>0</Absolute>
+    <NoteOn Channel="1" Note="60" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>1440</Absolute>
+    <NoteOn Channel="1" Note="60" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>1920</Absolute>
+    <NoteOn Channel="1" Note="62" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>3360</Absolute>
+    <NoteOn Channel="1" Note="62" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>3840</Absolute>
+    <NoteOn Channel="1" Note="64" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>5280</Absolute>
+    <NoteOn Channel="1" Note="64" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>5760</Absolute>
+    <NoteOn Channel="1" Note="65" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>7200</Absolute>
+    <NoteOn Channel="1" Note="65" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>7680</Absolute>
+    <NoteOn Channel="1" Note="67" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>9120</Absolute>
+    <NoteOn Channel="1" Note="67" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>9600</Absolute>
+    <NoteOn Channel="1" Note="69" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>11040</Absolute>
+    <NoteOn Channel="1" Note="69" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>11520</Absolute>
+    <NoteOn Channel="1" Note="71" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>12960</Absolute>
+    <NoteOn Channel="1" Note="71" Velocity="0"/>
+  </Event>
+  <Event>
+    <Absolute>13440</Absolute>
+    <NoteOn Channel="1" Note="72" Velocity="80"/>
+  </Event>
+  <Event>
+    <Absolute>14880</Absolute>
+    <NoteOn Channel="1" Note="72" Velocity="0"/>
+  </Event>
+</Track>
+</MIDIFile>

@@ -1,0 +1,16 @@
+libraries
+max-exports
+tools
+
+compiled
+applet
+max-export
+*.java
+*.jar
+
+*.mp3
+*.zip
+
+MTN
+NatureOfCode
+Generative-Design-Code-Package
