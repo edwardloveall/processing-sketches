@@ -1,15 +1,28 @@
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 
+/*
+To get sound:
+You need an aggragate audio device with devices in this order:
+* Built-in Output
+* Soundflower (2ch)
+
+Select that as both your input and output
+Then, open SoundflowerBed and choose build in output as your 2ch source
+Master volume is controlled through Built-in output
+*/
+
 ArrayList<Circle> circles;
 Minim minim;
-AudioPlayer player;
 AudioInput in;
 FFT fft;
+boolean DEBUG = false;
 
 void setup() {
   size(700, 400);
   noStroke();
+  rectMode(CORNERS);
+  colorMode(HSB, 360, 100, 100, 255);
 
   circles = new ArrayList<Circle>();
 
@@ -18,42 +31,54 @@ void setup() {
   }
 
   minim = new Minim(this);
-
   in = minim.getLineIn(Minim.STEREO, 512);
-
   fft = new FFT(in.bufferSize(), in.sampleRate());
   fft.logAverages(100, 1);
 }
 
 void draw() {
-  background(244.00, 241.00, 237.00);
-  translate(width/2, height/2);
+  background(34, 3, 95);
+  changeSomething();
+  doSomething();
+}
 
-  // fft.forward(player.mix);
+void changeSomething() {
   fft.forward(in.mix);
-
-  float low  = fft.getAvg(0);
-  float mid  = fft.getAvg(int(fft.avgSize() * (1/3)));
-  float high = fft.getAvg(int(fft.avgSize() * (2/3)));
-
-  float amp = (low + mid + high) / 3;
+  float amp = (fft.getAvg(0) + fft.getAvg(1)) / 2;
 
   for (int i = 0; i < circles.size(); i++) {
-    // Circle excited = circles.get(int(random(0, circles.size())));
-    Circle excited = circles.get(i);
-    excited.excite(amp);
+    Circle excited = circles.get(int(random(0, circles.size())));
+    // Circle excited = circles.get(i);
+    excited.excite(amp * 1.5);
   }
+}
 
-  for (int i = 0; i < circles.size(); i++) {
-    Circle c = circles.get(i);
+void doSomething() {
+  pushMatrix();
+    translate(width/2, height/2);
 
-    c.update();
-    c.display();
+    for (int i = 0; i < circles.size(); i++) {
+      Circle c = circles.get(i);
+
+      c.update();
+      c.display();
+    }
+  popMatrix();
+
+  if (DEBUG == true) {
+    int count = fft.avgSize();
+    float barWidth = width / count;
+
+    for (int i = 0; i < count; i++) {
+      float amp = fft.getAvg(i);
+      int barTop = height - int(amp * 10);
+      fill(0, amp * 100);
+      rect(barWidth * i, barTop, barWidth * (i + 1), height);
+    }
   }
 }
 
 void stop() {
-  // player.close();
   in.close();
   minim.stop();
   super.stop();

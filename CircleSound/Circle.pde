@@ -2,13 +2,13 @@ class Circle {
   float angle, aVel;
   float radius;
   float amp;
-  float opacity, red, green, blue;
+  float opacity, hue, sat, bri;
   PVector pos;
 
   Circle() {
     angle = random(0, TWO_PI);
-    aVel = TWO_PI * random(0.0003, 0.0006);
-    radius = random(50, 100);
+    aVel = TWO_PI * random(0.0003, 0.0008);
+    radius = random(30, 100);
     amp = 0;
     pos = new PVector(0, 0);
   }
@@ -34,9 +34,9 @@ class Circle {
 
   void updateAppearance() {
     opacity = map(amp, 0, 40, 40, 255);
-    red = map(amp, 0, 40, 0, 96);
-    green = map(amp, 0, 40, 0, 174);
-    blue = map(amp, 0, 40, 0, 255);
+    hue = 10;
+    sat = map(amp, 0, 40, 30, 80);
+    bri = 80;
   }
 
   void excite(float push) {
@@ -44,7 +44,7 @@ class Circle {
   }
 
   void display() {
-    fill(red, green, blue, opacity);
+    fill(hue, sat, bri, opacity);
     ellipse(pos.x, pos.y, 14, 14);
     // fill(96, 174, 255);
     // ellipse(pos.x, pos.y, 3, 3);
