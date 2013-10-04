@@ -4,11 +4,11 @@ import ddf.minim.analysis.*;
 /*
 To get sound:
 You need an aggragate audio device with devices in this order:
-* Built-in Output
 * Soundflower (2ch)
+* Built-in Output
 
 Select that as both your input and output
-Then, open SoundflowerBed and choose build in output as your 2ch source
+Then, open SoundflowerBed and choose built in output as your 2ch source
 Master volume is controlled through Built-in output
 */
 
