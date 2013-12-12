@@ -8,7 +8,6 @@ void setup() {
   frameRate(30);
 
   // ortho(0, width, 0, height);
-  lights();
   
   for (int i = 0; i < orbiters.length; i++) {
     orbiters[i] = new Orbiter(140);
